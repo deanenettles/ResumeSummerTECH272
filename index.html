@@ -15,13 +15,15 @@
         /* BOX SIZING -- ignores border and padding when measuring width */
         html {
             box-sizing: border-box;             background-color:#444;
+            padding:0; margin:0;
 
             }
             *, *:before, *:after {
             box-sizing: inherit;
             }
             
-        #wrap {width:100%; max-width:800px; margin:0 auto;padding:20px;}
+        #wrap {width:100%; max-width:800px; margin:0 auto;}
+        main {margin:0;  padding:0px;}
         header {background-color:lightblue; padding:5px 40px; border-radius:12px  12px 0 0;}
         footer {background-color:lightblue; padding:5px 40px; border-radius:0 0 12px 12px;}
         section {padding:2.5px 40px; background-color:white;}
