@@ -12,18 +12,33 @@
     <style>
 
         /* STRUCTURE */
-    #wrap {width:100%; max-width:800px; margin:0 auto;}
+        /* BOX SIZING -- ignores border and padding when measuring width */
+        html {
+            box-sizing: border-box;             background-color:#444;
 
-    main {padding:40px;}
+            }
+            *, *:before, *:after {
+            box-sizing: inherit;
+            }
+            
+        #wrap {width:100%; max-width:800px; margin:0 auto;padding:40px;}
+        header {background-color:lightblue; padding:5px 40px; border-radius:12px  12px 0 0;}
+        footer {background-color:lightblue; padding:5px 40px; border-radius:0 0 12px 12px;}
+        section {padding:2.5px 40px; background-color:white;}
+        section:last-of-type {padding-bottom:20px;}
+        nav {background-color:red; margin-top:0; padding: 4px 0;}
 
         /* TABLE */
-        table {text-align:left;}
+        table {text-align:left; border-spacing:0; border-collapse:separate; width:100%;}
         td, th {padding:6px; vertical-align:top;}
+        tbody tr:nth-child(odd) {background-color:lightblue;}
 
 
         /* FORM */
         input, textarea, button {display:block; margin-bottom: 6px;}
         input, textarea {width:100%; max-width:400px;}
+
+
 
         /* TYPOGRAPHY */
         html {
@@ -33,10 +48,32 @@
             font-style: normal;
             font-variation-settings:
                 "wdth" 100;
+            line-height:1.4;
 }
+        h1 {font-size:42px; letter-spacing:-1px;}
+        h2 {font-size:24px;}
+        h3 {font-size:20px;}
+        h4 {font-size:18px;}
+        h5 {font-size:16px;}
         h2 span {font-size:14px; font-style:italic;}
+        header h1, h2, h3, h4, h5 {margin-bottom:3px;}
+        header h2, h3, h4, h5 {margin-top:0;}
+        header h2 {font-style:italic;}
+        section li {margin-bottom:4px;}
 
         /* LINKS */
+        header ul {padding-left:0; font-weight:600;}
+        header li, nav li {display:inline; margin-right:12px;}
+
+        header a:link, header a:visited {color:red; text-decoration:none;}
+        header a:hover, header a:focus, header a:active {text-decoration:underline; color:black;}
+        
+        nav a:link, nav a:visited {color:white; text-decoration:none; font-weight:600;}
+        nav a:hover, nav a:focus, nav a:active {text-decoration:underline; color:lightblue;}
+
+        section a:link, section a:visited {color:lightgrey; text-decoration:none;}
+        section a:hover, section a:focus, section a:active {text-decoration:underline; color:grey;}        
+
 
     </style>
 </head>
@@ -51,23 +88,24 @@
                     <li><a href="https://www.linkedin.com/in/deane-nettles-125b14268/" target="_blank">LinkedIn</a></li>
                     <li>Baltimore, MD</li>
                 </ul>
-                <nav>
-                    <ul>
-                        <li><a href="#bio">Biography</a></li>
-                        <li><a href="#accomplish">Accomplishments</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#software">Software</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
+
             </header>
+            <nav>
+                <ul>
+                    <li><a href="#bio">Biography</a></li>
+                    <li><a href="#accomplish">Accomplishments</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#software">Software</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
             <section id="bio">
-                <h3>Biography <span><a href="#top">Top</a></span></h3>
+                <h2>Biography <span><a href="#top">Top</a></span></h2>
                 <p>Prof Nettles is a graphic designer, photographr, illustrator and educator. He has worked at ad agencies, design firms, publications, direct marketing firms and has developed web sites.</p>
 
             </section>
             <section id="accomplish">
-                <h3>Accomplishments <span><a href="#top">Top</a></span></h3>
+                <h2>Accomplishments <span><a href="#top">Top</a></span></h2>
                 <h4>Creative Director</h4>
                 <h5>Deane Nettles Associates LLC, Baltimore, MD, <time datetime="2007"></time>2007 – Present</h5>
                 <p>Spearhead art direction, design, production, and project management for clients in government and communications sectors, including businesses and associations.</p>
@@ -77,9 +115,9 @@
                     <li>Directed and produced convention program and materials for Federal Mediation and Conciliation Service.</li>
                     <li>Retained by the International Monetary Fund to produce landing pages and animated web advertising.</li>
                     <li>Art directed and created print and web marketing materials for National Geographic Society.</li>
-                    <li>Directed and produced a commercial Drupal website for Perrin Violins.</li>
+                    <li>Managed all print, web and dispay graphics for Washington Auto Show for three years</li>
                 </ul>
-    
+
             </section>
             <section id="education">
                 <h2>Education <span><a href="#top">Top</a></span></h2>
@@ -176,7 +214,7 @@
 
             </section>
             <section id="reply">
-                <h2>Reply <span><a href="#top">Top</a></span></h2>
+                <h2>Want to hire me? <span><a href="#top">Top</a></span></h2>
                 <form action="mailto:dnettle2@montgomerycollege.edu" method="post" enctype="text/plain">
                     <input type="text" name="firstname" required autofocus placeholder="First Name*">
                     <input type="text" name="lastname" required placeholder="Last Name*">
@@ -197,6 +235,6 @@
         </main>
 
     </div><!-- end WRAP -->
-    
+
 </body>
 </html>
