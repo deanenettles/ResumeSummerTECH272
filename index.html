@@ -30,6 +30,11 @@
         section:last-of-type {padding-bottom:20px;}
         nav {background-color:red; margin-top:0; padding: 4px 0;}
 
+        .flex-container {display:flex; justify-content:left; flex-wrap:wrap; flex-direction:row; gap:2%;}
+
+        #hire_me {background-color:tan;}
+        #software {padding-bottom:40px;}
+
         /* TABLE */
         table {text-align:left; border-spacing:0; border-collapse:separate; width:100%;}
         td, th {padding:6px; vertical-align:top;}
@@ -38,8 +43,9 @@
 
         /* FORM */
         input, textarea, button {display:block; margin-bottom: 6px;}
-        input, textarea {width:100%; max-width:400px;}
-
+        input, textarea {width:100%; max-width:400px; border:0; padding:6px;}
+            button {padding:6px; border:0; border-radius:6px; margin-top:12px;}
+            button[type=submit] {color:white;background-color:red;}
 
 
         /* TYPOGRAPHY */
@@ -62,6 +68,9 @@
         header h2, h3, h4, h5 {margin-top:0;}
         header h2 {font-style:italic;}
         section li {margin-bottom:4px;}
+        #hire_me h2 {margin-bottom:18px;}
+
+        #softwarelist p {background-color:lightblue; padding:15px; border-radius:6px;}
 
         /* LINKS */
         header ul {padding-left:0; font-weight:600;}
@@ -93,7 +102,7 @@
 
             </header>
             <nav>
-                <ul>
+                <ul class="flex-container">
                     <li><a href="#bio">Biography</a></li>
                     <li><a href="#accomplish">Accomplishments</a></li>
                     <li><a href="#projects">Projects</a></li>
@@ -163,6 +172,17 @@
                 </table>
             </section>
 
+
+            <section id="softwarelist">
+                <h2>Software I Know</h2>
+                    <div class="flex-container">
+                        <p>Photoshop</p>
+                        <p>Illustrator</p>
+                        <p>InDesign</p>
+                        <p>Premier</p>
+                    </div>
+                </section>
+
             <section id="software">
                 <h2>Software Proficiency <span><a href="#top">Top</a></span></h2>
                 <table>
@@ -216,7 +236,7 @@
 
             </section>
             <section id="hire_me">
-                <h2>Want to hire me? <span><a href="#top">Top</a></span></h2>
+                <h2>Want to talk with me? <span><a href="#top">Top</a></span></h2>
                 <form action="mailto:dnettle2@montgomerycollege.edu" method="post" enctype="text/plain">
                     <input type="text" name="firstname" required autofocus placeholder="First Name*">
                     <input type="text" name="lastname" required placeholder="Last Name*">
